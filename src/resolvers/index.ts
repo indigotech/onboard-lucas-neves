@@ -1,6 +1,3 @@
-
-
-
 const resolvers = {
   Query: {
     hello(): string {

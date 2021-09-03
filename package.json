@@ -4,12 +4,12 @@
   "description": "## Project's Description First contact with Taqtile. Backend development with NodeJs.",
   "main": "index.js",
   "dependencies": {
-    "apollo-server": "^3.3.0",
-    "graphql": "^15.5.2"
+    "apollo-server": "3.3.0",
+    "graphql": "15.5.2"
   },
   "devDependencies": {
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.4.2"
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.4.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

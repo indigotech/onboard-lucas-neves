@@ -1,0 +1,29 @@
+{
+  "name": "onboard-lucas-neves",
+  "version": "1.0.0",
+  "description": "## Project's Description First contact with Taqtile. Backend development with NodeJs.",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server": "3.3.0",
+    "graphql": "15.5.2"
+  },
+  "devDependencies": {
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indigotech/onboard-lucas-neves.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indigotech/onboard-lucas-neves/issues"
+  },
+  "homepage": "https://github.com/indigotech/onboard-lucas-neves#readme"
+}

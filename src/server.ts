@@ -1,9 +1,5 @@
-import { ApolloServer } from 'apollo-server';
-import typeDefs from './typeDefs'
-import resolvers from './resolvers'
+import { setupServer } from "./graphql";
+import { setupDb } from "./db/config";
 
-const server = new ApolloServer({ resolvers, typeDefs });
-
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+setupDb();
+setupServer();

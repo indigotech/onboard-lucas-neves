@@ -5,39 +5,38 @@ import {
   Column,
   UpdateDateColumn,
   BaseEntity,
-  Connection,
 } from "typeorm";
 
+import { ObjectType, Field, ID } from "type-graphql";
+
 @Entity("user")
+@ObjectType()
 export class User extends BaseEntity {
+  @Field(() => ID)
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Field(() => String)
   @Column()
   name: string;
 
+  @Field(() => String)
   @Column({ unique: true })
   email: string;
 
+  @Field(() => String)
   @Column()
   password: string;
 
+  @Field(() => String)
   @Column()
   birthDate: string;
 
+  @Field(() => Date)
   @CreateDateColumn()
   createdAt: Date;
 
+  @Field(() => Date)
   @UpdateDateColumn()
   updatedAt: Date;
-}
-
-export async function createUser(database: Connection) {
-  const user = new User();
-  user.name = "Bleh";
-  user.email = "bleh@bleh2.com";
-  user.password = "bleh@bleh2.com";
-
-  const newUser = await database.manager.save(user);
-  console.log("New User has been saved. Name: ", newUser.name);
 }

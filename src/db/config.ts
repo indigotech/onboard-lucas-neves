@@ -1,5 +1,4 @@
 import { createConnection } from "typeorm";
-//import { createUser } from "./entity";
 import * as path from "path";
 
 export async function setupDb() {
@@ -12,6 +11,5 @@ export async function setupDb() {
   });
 
   console.log("Database connected!");
-  //createUser(connection);
   return connection;
 }

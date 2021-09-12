@@ -4,7 +4,6 @@
 ## Project's Description
 First contact with Taqtile. Backend development with NodeJs.
 
-
 ## Environment and tools
 
 - [Node.js](https://nodejs.org/en/) - 
@@ -34,10 +33,3 @@ First contact with Taqtile. Backend development with NodeJs.
 ### Run the project locally
 
 ```npm run dev:server``` 
-
-
-
-
-
-
-

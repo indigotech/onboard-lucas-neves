@@ -7,7 +7,7 @@ export async function setupDb() {
   const connection = await createConnection({
     type: "postgres",
     url: "postgres://onboard:onboard@localhost:5432/onboard",
-    entities: [path.join(__dirname) + "/entity/index.{ts,js}"],
+    entities: [path.join(__dirname, "entity", "index.{ts,js}")],
   });
 
   console.log("Database connected!");

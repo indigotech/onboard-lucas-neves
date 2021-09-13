@@ -19,10 +19,10 @@
       "@data/*": ["./data/*"],
       "@domain": ["./domain"],
       "@domain/*": ["./domain/*"],
-      "@graphql": ["./api/graphql"],
       "@graphql/*": ["./api/graphql/*"],
+      "@db/*": ["./db/*"],
       "@test": ["./test"],
-      "@test/*": ["./test/*"]
+      "@test/*": ["./test/*"],
     }
   },
   "exclude": [

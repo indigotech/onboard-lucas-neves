@@ -1,4 +1,4 @@
-import { User } from "../db/entity";
+import { User } from "@db/entity";
 
 export async function createUser(data: User) {
   const newUser = User.create(data);

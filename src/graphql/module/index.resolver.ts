@@ -1,5 +1,5 @@
-import { User } from "../../db/entity";
-import { createUser } from "../../domain/create-user";
+import { User } from "@db/entity";
+import { createUser } from "@domain/create-user";
 
 const resolvers = {
   Query: {

@@ -8,8 +8,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    async createUser(_, { data }): Promise<User> {
-      const user = await createUser(data);
+    createUser(_, { data }): Promise<User> {
+      const user = createUser(data);
       return user;
     },
   },

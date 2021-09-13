@@ -2,3 +2,4 @@ node_modules
 *.test.*
 .eslintrc.js
 ormconfig.ts
+tsconfig-paths-dist.js

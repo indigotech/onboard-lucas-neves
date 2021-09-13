@@ -16,9 +16,9 @@ const resolvers = {
         throw new UserInputError("Senha Fraca");
       }
       if (await emailValidation(data.email)) {
-        throw new UserInputError("Já existe uma conta com esse email!");
+        throw new UserInputError("Email inválido!");
       }
-      const user = createUser(data);
+      const user = await createUser(data);
       return user;
     },
   },

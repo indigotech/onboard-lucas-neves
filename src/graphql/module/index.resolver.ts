@@ -18,8 +18,7 @@ const resolvers = {
       if (await emailValidation(data.email)) {
         throw new UserInputError("Email inválido!");
       }
-      const user = await createUser(data);
-      return user;
+      return createUser(data);
     },
   },
 };

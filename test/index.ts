@@ -1,8 +1,9 @@
 import "module-alias/register";
 import { setupServer } from "../src/graphql/graphql-server";
 import { setupDb } from "@db/config";
-
-const request = require("supertest");
+import { expect } from "chai";
+import * as request from "supertest";
+//const request = require("supertest");
 
 describe("hello test", function () {
   before(async () => {
@@ -19,7 +20,7 @@ describe("hello test", function () {
       .expect("Content-Type", /json/)
       .expect(200)
       .end(function (err, res) {
-        console.log(res.text);
+        expect(res.text).to.be.eq('{"data":{"hello":"Hello, world!"}}\n');
       });
   });
 });

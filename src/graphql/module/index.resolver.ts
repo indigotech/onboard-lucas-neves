@@ -1,5 +1,8 @@
 import { User } from "@db/entity";
 import { createUser } from "@domain/create-user";
+import { emailValidation } from "@domain/email-validation";
+import { passwordValidation } from "@domain/password-validation";
+import { UserInputError } from "apollo-server";
 
 const resolvers = {
   Query: {
@@ -8,9 +11,14 @@ const resolvers = {
     },
   },
   Mutation: {
-    createUser(_, { data }): Promise<User> {
-      const user = createUser(data);
-      return user;
+    async createUser(_, { data }): Promise<User> {
+      if (passwordValidation(data.password)) {
+        throw new UserInputError("Senha Fraca");
+      }
+      if (await emailValidation(data.email)) {
+        throw new UserInputError("Email inválido!");
+      }
+      return createUser(data);
     },
   },
 };

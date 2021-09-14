@@ -16,6 +16,7 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
+    "@types/mocha": "^9.0.0",
     "@types/node": "16.7.13",
     "@typescript-eslint/eslint-plugin": "4.31.0",
     "@typescript-eslint/parser": "4.31.0",
@@ -23,6 +24,7 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "faker": "5.5.3",
+    "mocha": "^9.1.1",
     "prettier": "2.3.2",
     "ts-node-dev": "1.1.8",
     "tsc-watch": "4.5.0",
@@ -30,10 +32,10 @@
     "typescript": "4.4.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "tsc-watch --onSuccess \"node dist/server.js --inspect\" ",
     "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ormconfig.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha test/index.ts"
   },
   "_moduleAliases": {
     "@domain": "dist/domain",

@@ -8,4 +8,5 @@ export async function setupServer() {
 
   const { url } = await server.listen();
   console.log(`🚀  Server ready at ${url}`);
+  return server;
 }

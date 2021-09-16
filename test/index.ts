@@ -39,13 +39,15 @@ describe("hello test", function () {
       .expect("Content-Type", /json/)
       .expect(200)
       .then(async (res) => {
-        expect(res.body.data.createUser).to.have.property("id");
-        expect(res.body.data.createUser).to.have.property("name");
-        expect(res.body.data.createUser).to.have.property("email");
-        expect(res.body.data.createUser).to.have.property("birthDate");
-        expect(res.body.data.createUser.name).to.be.eq("Nome");
-        expect(res.body.data.createUser.email).to.be.eq("teste@teste.com");
-        expect(res.body.data.createUser.birthDate).to.be.eq("birth");
+        expect(await res.body.data.createUser).to.have.property("id");
+        expect(await res.body.data.createUser).to.have.property("name");
+        expect(await res.body.data.createUser).to.have.property("email");
+        expect(await res.body.data.createUser).to.have.property("birthDate");
+        expect(await res.body.data.createUser.name).to.be.eq("Nome");
+        expect(await res.body.data.createUser.email).to.be.eq(
+          "teste@teste.com"
+        );
+        expect(await res.body.data.createUser.birthDate).to.be.eq("birth");
 
         const user = await User.findOne();
         expect(user.name).to.be.eq("Nome");
@@ -54,7 +56,7 @@ describe("hello test", function () {
         expect(await bcrypt.compare("senha123", user.password)).to.be.true;
       });
   });
-  afterEach(function () {
-    User.delete({});
+  afterEach(async function () {
+    await User.delete({});
   });
 });
